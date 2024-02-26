@@ -1,0 +1,4 @@
+nitrogen --restore &
+lxpanel &
+ckb-next --background &
+xset r rate 200 70
