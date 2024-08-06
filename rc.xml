@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare-01</name>
+    <name>windows-classic</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -57,57 +57,57 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>sans</name>
+      <name>Tahoma</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
+      <name>Tahoma</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
+      <name>Tahoma</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
+      <name>Tahoma</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Tahoma</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Tahoma</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
@@ -251,13 +251,8 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-S-q">
+    <keybind key="A-F4">
       <action name="Close"/>
-    </keybind>
-    <keybind key="A-Escape">
-      <action name="Lower"/>
-      <action name="FocusToBottom"/>
-      <action name="Unfocus"/>
     </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
@@ -326,7 +321,7 @@
           <enabled>true</enabled>
           <name>terminal</name>
         </startupnotify>
-        <command>kitty</command>
+        <command>xterm</command>
       </action>
     </keybind>
     <keybind key="C-A-w">
@@ -338,23 +333,23 @@
         <command>firefox</command>
       </action>
     </keybind>
-    <!-- rofi -->
-    <keybind key="A-d">
+    <!-- application runner dialog box -->
+    <keybind key="W-r">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>"rofi"</name>
+          <name>"run"</name>
         </startupnotify>
-        <command>rofi -show drun</command>
+        <command>lxpanelctl run</command>
       </action>
     </keybind>
     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <!-- Maximize the window -->
-    <keybind key="A-f">
+    <keybind key="A-F10">
       <action name="MaximizeFull"/>
     </keybind>
     <!-- unmaximize (restore) -->
-    <keybind key="A-g">
+    <keybind key="A-S-F10">
       <action name="UnmaximizeFull"/>
     </keybind>
     <!-- Snap Left, half width, full height -->
@@ -806,17 +801,14 @@
     <manageDesktops>yes</manageDesktops>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
- <applications>
-
-  <!-- match all windows, and remove their decorations -->
-  <application class="*">
-    <decor>no</decor>
-  </application>
-
-  <!-- but give decorations back to Firefox -->
-  <application name="Firefox*">
-    <decor>yes</decor>
-  </application>
-
-</applications> 
+  <applications>
+    <!-- match all windows, and remove their decorations -->
+    <application class="*">
+      <decor>yes</decor>
+    </application>
+    <!-- but give decorations back to Firefox -->
+    <application name="Firefox*">
+      <decor>yes</decor>
+    </application>
+  </applications>
 </openbox_config>
