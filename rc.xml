@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>windows-classic</name>
-    <titleLayout>NLIMC</titleLayout>
+    <name>Syscrash</name>
+    <titleLayout>DNLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -120,7 +120,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -133,8 +133,8 @@
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
-    <drawContents>yes</drawContents>
-    <popupShow>Nonpixel</popupShow>
+    <drawContents>no</drawContents>
+    <popupShow>Never</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
     <!-- 'Center', 'Top', or 'Fixed' -->
@@ -177,52 +177,27 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-    <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
+    <keybind key="W-A-h">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-A-l">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
+    <keybind key="W-A-k">
       <action name="GoToDesktop">
         <to>up</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Down">
+    <keybind key="W-A-j">
       <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Left">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
         <to>down</to>
         <wrap>no</wrap>
       </action>
@@ -247,14 +222,14 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="A-S-d">
+    <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-space">
+    <keybind key="W-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
@@ -268,6 +243,7 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
+        <!--allDesktops>yes</allDesktops-->
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -275,8 +251,9 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="A-S-Tab">
+    <keybind key="W-S-Tab">
       <action name="PreviousWindow">
+        <!-- Keybindings for window switching -->
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -285,27 +262,27 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching with hjkl -->
-    <keybind key="A-l">
+    <keybind key="W-l">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="A-h">
+    <keybind key="W-h">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="A-k">
+    <keybind key="W-k">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="A-j">
+    <keybind key="W-j">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
+    <!-- Keybindings for opening/running/starting applications -->
     <keybind key="C-A-e">
       <action name="Execute">
         <startupnotify>
@@ -315,22 +292,32 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
+    <keybind key="C-A-c">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>calculator</name>
+        </startupnotify>
+        <command>mate-calc</command>
+      </action>
+    </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
           <name>terminal</name>
         </startupnotify>
-        <command>xterm</command>
+        <command>xterm -fa 'More Perfect DOS VGA' -fs 12</command>
+        <!--command>kitty</command-->
       </action>
     </keybind>
     <keybind key="C-A-w">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Firefox</name>
+          <name>webbrowser</name>
         </startupnotify>
-        <command>firefox</command>
+        <command>chromium</command>
       </action>
     </keybind>
     <!-- application runner dialog box -->
@@ -343,7 +330,6 @@
         <command>lxpanelctl run</command>
       </action>
     </keybind>
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <!-- Maximize the window -->
     <keybind key="A-F10">
       <action name="MaximizeFull"/>
@@ -353,7 +339,7 @@
       <action name="UnmaximizeFull"/>
     </keybind>
     <!-- Snap Left, half width, full height -->
-    <keybind key="A-S-h">
+    <keybind key="W-S-h">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -363,7 +349,7 @@
       </action>
     </keybind>
     <!-- Snap Right, half width, full height -->
-    <keybind key="A-S-l">
+    <keybind key="W-S-l">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -373,7 +359,7 @@
       </action>
     </keybind>
     <!-- Snap Top, full width, half height -->
-    <keybind key="A-S-k">
+    <keybind key="W-S-k">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -383,7 +369,7 @@
       </action>
     </keybind>
     <!-- 2, Snap Bottom, full width, half height -->
-    <keybind key="A-S-j">
+    <keybind key="W-S-j">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -393,7 +379,7 @@
       </action>
     </keybind>
     <!-- 7, Snap Top-Left, half width/height -->
-    <keybind key="A-S-y">
+    <keybind key="W-S-y">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -403,7 +389,7 @@
       </action>
     </keybind>
     <!-- 1, Snap Bottom-Left, half width/height -->
-    <keybind key="A-S-u">
+    <keybind key="W-S-u">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -413,7 +399,7 @@
       </action>
     </keybind>
     <!-- 9, Snap Top-Right, half width/height -->
-    <keybind key="A-S-i">
+    <keybind key="W-S-i">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -423,7 +409,7 @@
       </action>
     </keybind>
     <!-- 3, Snap Bottom-Right, half width/height -->
-    <keybind key="A-S-o">
+    <keybind key="W-S-o">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -432,7 +418,6 @@
         <height>50%</height>
       </action>
     </keybind>
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
@@ -453,35 +438,35 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
+      <mousebind button="W-Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind button="A-Left" action="Click">
+      <mousebind button="W-Left" action="Click">
         <action name="Unshade"/>
       </mousebind>
-      <mousebind button="A-Left" action="Drag">
+      <mousebind button="W-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
-      <mousebind button="A-Right" action="Press">
+      <mousebind button="W-Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
-      <mousebind button="A-Right" action="Drag">
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
-      <mousebind button="A-Middle" action="Press">
+      <mousebind button="W-Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
       </mousebind>
-      <!-- <mousebind button="A-Up" action="Click"> -->
+      <!-- <mousebind button="W-Up" action="Click"> -->
       <!--   <action name="GoToDesktop"> -->
       <!--     <to>previous</to> -->
       <!--   </action> -->
       <!-- </mousebind> -->
-      <!-- <mousebind button="A-Down" action="Click"> -->
+      <!-- <mousebind button="W-Down" action="Click"> -->
       <!--   <action name="GoToDesktop"> -->
       <!--     <to>next</to> -->
       <!--   </action> -->
@@ -496,12 +481,12 @@
       <!--     <to>next</to> -->
       <!--   </action> -->
       <!-- </mousebind> -->
-      <!-- <mousebind button="A-S-Up" action="Click"> -->
+      <!-- <mousebind button="W-S-Up" action="Click"> -->
       <!--   <action name="SendToDesktop"> -->
       <!--     <to>previous</to> -->
       <!--   </action> -->
       <!-- </mousebind> -->
-      <!-- <mousebind button="A-S-Down" action="Click"> -->
+      <!-- <mousebind button="W-S-Down" action="Click"> -->
       <!--   <action name="SendToDesktop"> -->
       <!--     <to>next</to> -->
       <!--   </action> -->
@@ -709,12 +694,12 @@
       <!--     <to>next</to> -->
       <!--   </action> -->
       <!-- </mousebind> -->
-      <!-- <mousebind button="A-Up" action="Click"> -->
+      <!-- <mousebind button="W-Up" action="Click"> -->
       <!--   <action name="GoToDesktop"> -->
       <!--     <to>previous</to> -->
       <!--   </action> -->
       <!-- </mousebind> -->
-      <!-- <mousebind button="A-Down" action="Click"> -->
+      <!-- <mousebind button="W-Down" action="Click"> -->
       <!--   <action name="GoToDesktop"> -->
       <!--     <to>next</to> -->
       <!--   </action> -->
@@ -762,12 +747,12 @@
           <to>next</to>
         </action>
       </mousebind>
-      <mousebind button="A-Up" action="Click">
+      <mousebind button="W-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
         </action>
       </mousebind>
-      <mousebind button="A-Down" action="Click">
+      <mousebind button="W-Down" action="Click">
         <action name="GoToDesktop">
           <to>next</to>
         </action>
