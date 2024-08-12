@@ -429,6 +429,15 @@ Copy the file to $HOME/.config/openbox/ instead. -->
 			</action>
 		</keybind>
 		<!-- keybindings for running applications "c-a-*"-->
+		<keybind key="W-r">
+			<action name="Execute">
+				<startupnotify>
+					<enabled>true</enabled>
+					<name>"run"</name>
+				</startupnotify>
+				<command>lxpanelctl run</command>
+			</action>
+		</keybind>
 		<keybind key="C-A-w">
 			<action name="Execute">
 				<startupnotify>
