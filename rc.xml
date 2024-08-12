@@ -125,7 +125,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
 
 			use obconf if you want to change these without having to log out
 		and back in -->
-		<number>4</number>
+		<number>8</number>
 		<firstdesk>1</firstdesk>
 		<names>
 			<!-- set names up here if you want to, like this:
@@ -212,6 +212,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
 				<wrap>no</wrap>
 			</action>
 		</keybind>
+		<!-- Keybindings for desktop switching "W-F1...F8"-->
 		<keybind key="W-F1">
 			<action name="GoToDesktop">
 				<to>1</to>
@@ -232,6 +233,27 @@ Copy the file to $HOME/.config/openbox/ instead. -->
 				<to>4</to>
 			</action>
 		</keybind>
+		<keybind key="W-F5">
+			<action name="GoToDesktop">
+				<to>5</to>
+			</action>
+		</keybind>
+		<keybind key="W-F6">
+			<action name="GoToDesktop">
+				<to>6</to>
+			</action>
+		</keybind>
+		<keybind key="W-F7">
+			<action name="GoToDesktop">
+				<to>7</to>
+			</action>
+		</keybind>
+		<keybind key="W-F8">
+			<action name="GoToDesktop">
+				<to>8</to>
+			</action>
+		</keybind>
+		<!-- Show Desktop -->
 		<keybind key="W-d">
 			<action name="ToggleShowDesktop"/>
 		</keybind>
